@@ -16,6 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Database Connection setup for Neon Postgres
 const connectionString = process.env.DATABASE_URL;
 
+// Corrected SSL settings for Neon PostgreSQL
 const pool = new Pool({
     connectionString: connectionString,
     ssl: connectionString ? { rejectUnauthorized: false } : false
@@ -23,22 +24,26 @@ const pool = new Pool({
 
 // Seed sample data if table is empty
 async function seedDefaultProducts() {
-    const checkCount = await pool.query('SELECT COUNT(*) FROM products');
-    if (parseInt(checkCount.rows[0].count) === 0) {
-        const defaultItems = [
-            ['Uffata Amayyaa Dubartii', 'clothes', 2500, 'QUEEN BELLA Collection - Uffata bareedaa fi mijataa ta\'e kan waqtii kamiyyuu uffatamu.', 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=600&q=80'],
-            ['Uffata Aadaa Miidhagaa', 'clothes', 4000, 'QUEEN BELLA Collection - Uffata aadaa hojii harkaatiin bareechifame kan ayyaanaaf ta\'u.', 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80'],
-            ['Girdoo Mana Jireenyaa', 'curtains', 1800, 'Mana keessaniif ifa fi bareedina kennu, ruumii keessaniif mijataa.', 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80'],
-            ['Girdoo Mana Ciisaa (Luxury Velvet)', 'curtains', 2200, 'Huccuu furdaa dukkaneessuu danda\'u, mana ciisaatiif bayyee gaarii.', 'https://images.unsplash.com/photo-1540518614846-7ede433c5173?auto=format&fit=crop&w=600&q=80']
-        ];
-        
-        for (const item of defaultItems) {
-            await pool.query(
-                'INSERT INTO products (name, category, price, description, image) VALUES ($1, $2, $3, $4, $5)',
-                item
-            );
+    try {
+        const checkCount = await pool.query('SELECT COUNT(*) FROM products');
+        if (parseInt(checkCount.rows[0].count) === 0) {
+            const defaultItems = [
+                ['Uffata Amayyaa Dubartii', 'clothes', 2500, 'QUEEN BELLA Collection - Uffata bareedaa fi mijataa ta\'e kan waqtii kamiyyuu uffatamu.', 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=600&q=80'],
+                ['Uffata Aadaa Miidhagaa', 'clothes', 4000, 'QUEEN BELLA Collection - Uffata aadaa hojii harkaatiin bareechifame kan ayyaanaaf ta\'u.', 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80'],
+                ['Girdoo Mana Jireenyaa', 'curtains', 1800, 'Mana keessaniif ifa fi bareedina kennu, ruumii keessaniif mijataa.', 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80'],
+                ['Girdoo Mana Ciisaa (Luxury Velvet)', 'curtains', 2200, 'Huccuu furdaa dukkaneessuu danda\'u, mana ciisaatiif bayyee gaarii.', 'https://images.unsplash.com/photo-1540518614846-7ede433c5173?auto=format&fit=crop&w=600&q=80']
+            ];
+            
+            for (const item of defaultItems) {
+                await pool.query(
+                    'INSERT INTO products (name, category, price, description, image) VALUES ($1, $2, $3, $4, $5)',
+                    item
+                );
+            }
+            console.log('Sample products seeded into Neon database.');
         }
-        console.log('Sample products seeded into Neon database.');
+    } catch (err) {
+        console.error('Error seeding default products:', err.message);
     }
 }
 
