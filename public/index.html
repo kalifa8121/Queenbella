@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="om">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUEEN BELLA COLLECTION FASHION</title>
+    <!-- Tailwind CSS for Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans Ethiopic', sans-serif;
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 smooth-scroll flex flex-col min-h-screen">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                
+                <!-- Brand Logo & Name -->
+                <div class="flex items-center space-x-2">
+                    <div class="bg-gradient-to-r from-pink-600 to-purple-600 text-white p-2 rounded-xl shadow-md">
+                        <i class="fa-solid font-bold text-xl fa-crown"></i>
+                    </div>
+                    <div>
+                        <span class="text-base sm:text-xl font-extrabold bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent block leading-tight">
+                            QUEEN BELLA
+                        </span>
+                        <span class="text-[10px] tracking-widest text-slate-400 font-bold uppercase block -mt-1">
+                            COLLECTION FASHION
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#uuffata" class="hover:text-pink-600 transition" id="nav-clothes">Uffata Dubartii</a>
+                    <a href="#magaarajaa" class="hover:text-pink-600 transition" id="nav-curtains">Girdoo Manaa</a>
+                    <a href="#qunnamtii" class="hover:text-pink-600 transition" id="nav-contact">Nu Qunnambaa</a>
+                </div>
+
+                <!-- Language Selector & View Switcher -->
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <div class="bg-slate-100 p-1 rounded-xl flex text-xs font-semibold">
+                        <button id="tab-storefront-btn" onclick="switchView('storefront')" class="px-2.5 py-1.5 rounded-lg bg-pink-600 text-white shadow-sm transition">
+                            <i class="fa-solid fa-store mr-1"></i> <span id="lbl-view-store">Maamila</span>
+                        </button>
+                        <button id="tab-admin-btn" onclick="switchView('admin')" class="px-2.5 py-1.5 rounded-lg text-slate-600 hover:text-pink-600 transition">
+                            <i class="fa-solid fa-lock mr-1"></i> <span id="lbl-view-admin">Admin Panel</span>
+                        </button>
+                    </div>
+
+                    <div class="relative">
+                        <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-slate-100 border border-slate-200 text-slate-700 py-1.5 px-2 sm:px-3 pr-7 rounded-lg text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-pink-500 cursor-pointer">
+                            <option value="om" selected>🌳 Oromoo</option>
+                            <option value="en">🇬🇧 English</option>
+                            <option value="so">🇸🇴 Soomaali</option>
+                            <option value="am">🇪🇹 አማርኛ</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CUSTOMER VIEW WRAPPER -->
+    <div id="customer-view-container" class="space-y-0">
+        <!-- HERO SECTION -->
+        <header class="bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 text-white py-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+            <div class="max-w-4xl mx-auto relative z-10">
+                <span class="bg-pink-500/20 text-pink-300 text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-4 inline-block border border-pink-400/30">
+                    <i class="fa-solid fa-sparkles mr-1"></i> QUEEN BELLA COLLECTION FASHION
+                </span>
+                <h1 id="hero-title" class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
+                    Uffata Dubartii fi Girdoo Manaa Qulqullina Ol-aanaa Qaban
+                </h1>
+                <p id="hero-subtitle" class="text-slate-300 text-base sm:text-lg mb-8 max-w-2xl mx-auto">
+                    Filannoowwan miidhagoo uffata dubartiitiif fi magaarajaa manaa bareedoo gatii madalawaan bitaa.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#uuffata" id="hero-btn1" class="bg-pink-600 hover:bg-pink-700 text-white font-bold px-6 py-3 rounded-xl shadow-lg transition">
+                        Uffata Ilaali
+                    </a>
+                    <a href="#magaarajaa" id="hero-btn2" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold px-6 py-3 rounded-xl shadow-lg transition">
+                        Girdoo Manaa Ilaali
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN STOREFRONT -->
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+            <!-- WOMEN'S CLOTHES CATEGORY -->
+            <section id="uuffata">
+                <div class="border-b border-slate-200 pb-4 mb-8 flex items-center justify-between">
+                    <div>
+                        <h2 id="section-clothes-title" class="text-2xl sm:text-3xl font-bold text-slate-900">Uffata Dubartii</h2>
+                        <p id="section-clothes-desc" class="text-slate-500 text-sm mt-1">Uffataalee amayyaa fi aadaa dubartootaaf qophaa'an</p>
+                    </div>
+                    <span class="text-xs bg-pink-100 text-pink-700 font-bold px-3 py-1 rounded-full">Fashion Collection</span>
+                </div>
+                <div id="clothes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </section>
+
+            <!-- HOUSE CURTAINS CATEGORY -->
+            <section id="magaarajaa">
+                <div class="border-b border-slate-200 pb-4 mb-8 flex items-center justify-between">
+                    <div>
+                        <h2 id="section-curtains-title" class="text-2xl sm:text-3xl font-bold text-slate-900">Girdoo / Magaarajaa Manaa</h2>
+                        <p id="section-curtains-desc" class="text-slate-500 text-sm mt-1">Mana keessaniif bareedina addaa kan kennan magaarajaawwan quality high</p>
+                    </div>
+                    <span class="text-xs bg-amber-100 text-amber-700 font-bold px-3 py-1 rounded-full">Top Home Decor</span>
+                </div>
+                <div id="curtains-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </section>
+
+            <!-- PRICE CALCULATOR -->
+            <section class="bg-gradient-to-r from-slate-900 via-purple-950 to-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-800">
+                <div class="max-w-3xl mx-auto text-center">
+                    <i class="fa-solid fa-calculator text-4xl text-pink-400 mb-3"></i>
+                    <h2 id="calc-title" class="text-2xl sm:text-3xl font-bold mb-2">Bakka Gatii fi Odaraa Shallaguu</h2>
+                    <p id="calc-subtitle" class="text-slate-300 text-sm mb-8">Meeshaa barbaaddan fi baay'ina isaa filachuun gatii waligalaa beekaa.</p>
+
+                    <form id="calcForm" onsubmit="event.preventDefault(); calculateTotal();" class="space-y-4 text-left bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+                        <div>
+                            <label id="lbl-item-select" class="block text-sm font-medium mb-1 text-slate-200">Gosa Meeshaa Filadhaa:</label>
+                            <select id="calcItem" onchange="calculateTotal()" class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 focus:ring-2 focus:ring-pink-500 outline-none"></select>
+                        </div>
+
+                        <div>
+                            <label id="lbl-qty" class="block text-sm font-medium mb-1 text-slate-200">Baay'ina / Metrii:</label>
+                            <input type="number" id="calcQty" min="1" value="1" oninput="calculateTotal()" class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 focus:ring-2 focus:ring-pink-500 outline-none" placeholder="1">
+                        </div>
+
+                        <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div>
+                                <span id="lbl-total-price" class="text-xs text-slate-400 block">Gatii Waliigalaa:</span>
+                                <span id="totalPriceResult" class="text-2xl font-extrabold text-pink-400">0 ETB</span>
+                            </div>
+                            <button type="button" onclick="calculateTotal()" class="w-full sm:w-auto bg-pink-600 hover:bg-pink-500 text-white px-6 py-3 rounded-xl font-bold transition">
+                                <i class="fa-solid fa-rotate mr-2"></i> <span id="btn-calc">Gatii Shallagi</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- CONTACT SECTION -->
+            <section id="qunnamtii" class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-100 shadow-sm">
+                <div class="max-w-4xl mx-auto text-center">
+                    <span class="bg-pink-100 text-pink-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">
+                        Contact Us
+                    </span>
+                    <h2 id="contact-title" class="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Nu Qunnamuuf</h2>
+                    <p id="contact-subtitle" class="text-slate-500 text-sm mb-8">Odoo bittaawwan irratti gaaffii qabdu ta'e ykn ajajuu barbaaddu nuuf bilbilaa!</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col items-center justify-center hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-pink-600 text-white rounded-2xl flex items-center justify-center text-xl mb-3">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <h3 id="contact-phone-lbl" class="font-bold text-slate-800 text-base mb-1">Lakkoofsa 1</h3>
+                            <a href="tel:0911453645" class="text-xl font-extrabold text-pink-600 hover:underline">0911453645</a>
+                            <p id="contact-phone-hint" class="text-slate-400 text-xs mt-2">Sa'aatii 24/7 isiniif qophii dha</p>
+                        </div>
+
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col items-center justify-center hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-emerald-600 text-white rounded-2xl flex items-center justify-center text-xl mb-3">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-800 text-base mb-1">Lakkoofsa 2</h3>
+                            <a href="tel:0920689815" class="text-xl font-extrabold text-emerald-600 hover:underline">0920689815</a>
+                            <p class="text-slate-400 text-xs mt-2">Kallattiin bilbilaa</p>
+                        </div>
+
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col items-center justify-center hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-green-500 text-white rounded-2xl flex items-center justify-center text-xl mb-3">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <h3 id="contact-msg-lbl" class="font-bold text-slate-800 text-base mb-1">WhatsApp</h3>
+                            <a href="https://wa.me/251911453645" target="_blank" class="text-sm font-bold text-green-600 hover:underline">WhatsApp 1</a>
+                            <a href="https://wa.me/251920689815" target="_blank" class="text-sm font-bold text-green-600 hover:underline mt-1">WhatsApp 2</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- ADMIN PANEL -->
+    <div id="admin-view-container" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 hidden">
+        <!-- LOGIN CARD -->
+        <div id="admin-login-card" class="max-w-md mx-auto bg-slate-900 text-white p-8 rounded-3xl shadow-2xl border border-slate-800 my-12">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-pink-600 text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-3">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <h2 class="text-2xl font-extrabold text-white">Admin Login</h2>
+            </div>
+            <div id="login-error-msg" class="hidden bg-red-500/20 border border-red-500/50 text-red-300 text-xs p-3 rounded-xl mb-4 text-center">
+                Username ykn Password sirrii miti!
+            </div>
+            <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold mb-1 text-slate-300">Username:</label>
+                    <input type="text" id="adminUser" required class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 text-sm focus:ring-2 focus:ring-pink-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold mb-1 text-slate-300">Password:</label>
+                    <input type="password" id="adminPass" required class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 text-sm focus:ring-2 focus:ring-pink-500 outline-none">
+                </div>
+                <button type="submit" class="w-full bg-pink-600 hover:bg-pink-500 text-white font-bold py-3 rounded-xl transition">Seeni / Login</button>
+            </form>
+        </div>
+
+        <!-- AUTHENTICATED DASHBOARD -->
+        <div id="admin-dashboard-content" class="bg-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-slate-800 hidden">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-6 mb-8 gap-4">
+                <div>
+                    <h2 id="admin-title" class="text-2xl sm:text-3xl font-extrabold text-white">QUEEN BELLA - Admin Dashboard</h2>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="handleAdminLogout()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold px-4 py-2.5 rounded-xl text-sm transition">Logout</button>
+                    <button onclick="switchView('storefront')" class="bg-pink-600 hover:bg-pink-500 text-white font-bold px-4 py-2.5 rounded-xl text-sm transition" id="lbl-back-store">Kutaa Maamilaa Ilaali</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div class="lg:col-span-5 bg-slate-800/90 p-6 rounded-2xl border border-slate-700">
+                    <h3 class="text-lg font-bold text-white mb-4" id="lbl-add-new-header">Meeshaa Haaraa Galchuuf</h3>
+                    <form id="addProductForm" onsubmit="handleProductUpload(event)" class="space-y-4">
+                        <div>
+                            <label id="lbl-item-name" class="block text-xs font-semibold mb-1 text-slate-300">Maqaa Meeshaa:</label>
+                            <input type="text" id="prodName" required class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl p-3 text-sm outline-none">
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label id="lbl-item-category" class="block text-xs font-semibold mb-1 text-slate-300">Gosa Meeshaa:</label>
+                                <select id="prodCategory" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl p-3 text-sm outline-none">
+                                    <option value="clothes" id="opt-cat-clothes">Uffata Dubartii</option>
+                                    <option value="curtains" id="opt-cat-curtains">Girdoo / Magaarajaa</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label id="lbl-item-price" class="block text-xs font-semibold mb-1 text-slate-300">Gatii (ETB):</label>
+                                <input type="number" id="prodPrice" required min="1" class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl p-3 text-sm outline-none">
+                            </div>
+                        </div>
+                        <div>
+                            <label id="lbl-item-image" class="block text-xs font-semibold mb-1 text-slate-300">Suuraa Meeshaa (Upload):</label>
+                            <input type="file" id="prodImage" accept="image/*" required class="w-full bg-slate-900 border border-slate-700 text-slate-300 rounded-xl p-2 text-xs">
+                        </div>
+                        <div>
+                            <label id="lbl-item-desc" class="block text-xs font-semibold mb-1 text-slate-300">Ibsa Meeshaa (Description):</label>
+                            <textarea id="prodDesc" rows="3" required class="w-full bg-slate-900 border border-slate-700 text-white rounded-xl p-3 text-sm outline-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-pink-600 hover:bg-pink-500 text-white font-bold py-3 rounded-xl transition" id="btn-upload">Meeshaa Maxxansi</button>
+                    </form>
+                </div>
+
+                <div class="lg:col-span-7 bg-slate-800/90 p-6 rounded-2xl border border-slate-700">
+                    <h3 class="text-lg font-bold text-white mb-4 flex justify-between">
+                        <span id="lbl-manage-header">Tarree Meeshaalee Ol-ba'anii</span>
+                        <span id="admin-item-count" class="text-xs bg-pink-500/30 text-pink-300 px-2.5 py-1 rounded-full">0 items</span>
+                    </h3>
+                    <div id="admin-products-list" class="space-y-3 max-h-[500px] overflow-y-auto pr-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs">
+            <p id="footer-text">&copy; 2026 QUEEN BELLA COLLECTION FASHION. Mirgi Hundaa Seeraan Eeggamaa Dha. Bilbila: 0911453645 / 0920689815</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT LOGIC -->
+    <script>
+        let isAdminLoggedIn = false;
+        let productsList = [];
+
+        const translations = {
+            om: {
+                navClothes: "Uffata Dubartii", navCurtains: "Girdoo Manaa", navContact: "Nu Qunnambaa",
+                lblViewStore: "Maamila", lblViewAdmin: "Admin Panel", lblBackStore: "Kutaa Maamilaa Ilaali",
+                heroTitle: "QUEEN BELLA COLLECTION FASHION", heroSubtitle: "Uffata dubartii ammayyaa fi magaarajaa manaa qulqullina ol-aanaa qaban gatii madaalawaan bitaa.",
+                heroBtn1: "Uffata Ilaali", heroBtn2: "Girdoo Manaa Ilaali",
+                adminTitle: "QUEEN BELLA - Admin Dashboard", lblAddNewHeader: "Meeshaa Haaraa Galchuuf", lblManageHeader: "Tarree Meeshaalee Ol-ba'anii",
+                lblItemName: "Maqaa Meeshaa:", lblItemCategory: "Gosa Meeshaa:", optCatClothes: "Uffata Dubartii", optCatCurtains: "Girdoo / Magaarajaa",
+                lblItemPrice: "Gatii (ETB):", lblItemImage: "Suuraa Meeshaa (Upload):", lblItemDesc: "Ibsa Meeshaa (Description):", btnUpload: "Meeshaa Maxxansi",
+                sectionClothesTitle: "Uffata Dubartii", sectionClothesDesc: "Uffataalee amayyaa fi aadaa dubartootaaf qophaa'an",
+                sectionCurtainsTitle: "Girdoo / Magaarajaa Manaa", sectionCurtainsDesc: "Mana keessaniif bareedina addaa kan kennan magaarajaawwan quality high",
+                lblPrice: "Gatii", lblPriceMeter: "Gatii (Metriidhaan)", btnOrder: "Bitachuuf",
+                calcTitle: "Bakka Gatii fi Odaraa Shallaguu", calcSubtitle: "Meeshaa barbaaddan fi baay'ina isaa filachuun gatii waligalaa beekaa.",
+                lblItemSelect: "Gosa Meeshaa Filadhaa:", lblQty: "Baay'ina / Metrii:", lblTotalPrice: "Gatii Waliigalaa:", btnCalc: "Gatii Shallagi",
+                contactTitle: "Nu Qunnamuuf", contactSubtitle: "Odoo bittaawwan irratti gaaffii qabdu ta'e ykn ajajuu barbaaddu nuuf bilbilaa!",
+                contactPhoneLbl: "Lakkoofsa Bilbilaa", contactPhoneHint: "Sa'aatii 24/7 isiniif qophii dha", contactMsgLbl: "Kallattiin Ergaa Ergachuuf", contactMsgHint: "Ajaja fi gaaffii keessan ergaa",
+                footerText: "© 2026 QUEEN BELLA COLLECTION FASHION. Mirgi Hundaa Seeraan Eeggamaa Dha. Bilbila: 0911453645 / 0920689815"
+            },
+            en: {
+                navClothes: "Women's Clothes", navCurtains: "House Curtains", navContact: "Contact Us",
+                lblViewStore: "Customer View", lblViewAdmin: "Admin Panel", lblBackStore: "Back to Storefront",
+                heroTitle: "QUEEN BELLA COLLECTION FASHION", heroSubtitle: "Explore premium women's fashion outfits and elegant home curtains at unbeatable prices.",
+                heroBtn1: "View Clothes", heroBtn2: "View Curtains",
+                adminTitle: "QUEEN BELLA - Admin Dashboard", lblAddNewHeader: "Add New Item", lblManageHeader: "Uploaded Products Inventory",
+                lblItemName: "Item Name:", lblItemCategory: "Category:", optCatClothes: "Women's Clothing", optCatCurtains: "Curtains / Drapes",
+                lblItemPrice: "Price (ETB):", lblItemImage: "Product Photo (Upload):", lblItemDesc: "Item Description:", btnUpload: "Publish Item",
+                sectionClothesTitle: "Women's Clothing", sectionClothesDesc: "Modern and traditional outfits designed for women",
+                sectionCurtainsTitle: "House Curtains & Drapes", sectionCurtainsDesc: "High quality curtains to add elegance to your home",
+                lblPrice: "Price", lblPriceMeter: "Price (Per Meter)", btnOrder: "Buy Now",
+                calcTitle: "Price & Order Calculator", calcSubtitle: "Select your desired item and quantity to calculate the total price.",
+                lblItemSelect: "Select Item Type:", lblQty: "Quantity / Meters:", lblTotalPrice: "Total Price:", btnCalc: "Calculate Total",
+                contactTitle: "Contact Us", contactSubtitle: "Have questions or want to place a custom order? Call us today!",
+                contactPhoneLbl: "Phone Number", contactPhoneHint: "Available 24/7 for your calls", contactMsgLbl: "Direct Message", contactMsgHint: "Send your inquiries via WhatsApp",
+                footerText: "© 2026 QUEEN BELLA COLLECTION FASHION. All rights reserved. Phone: 0911453645 / 0920689815"
+            },
+            so: {
+                navClothes: "Dharka Haweenka", navCurtains: "Daahyooyinka Guriga", navContact: "Nala Soo Xiriir",
+                lblViewStore: "Macaamiisha", lblViewAdmin: "Admin Panel", lblBackStore: "U laabaw Qaybta Macaamiisha",
+                heroTitle: "QUEEN BELLA COLLECTION FASHION", heroSubtitle: "Ka hel dharka haweenka ugu quruxda badan iyo daahyooyinka guriga oo qiimo jaban ah.",
+                heroBtn1: "Eeg Dharka", heroBtn2: "Eeg Daahyooyinka",
+                adminTitle: "QUEEN BELLA - Admin Dashboard", lblAddNewHeader: "Kudhar Alaab Cusub", lblManageHeader: "Alaabta Ku Jirta Suuqa",
+                lblItemName: "Magaca Alaabta:", lblItemCategory: "Nooca Alaabta:", optCatClothes: "Dharka Haweenka", optCatCurtains: "Daahyooyinka",
+                lblItemPrice: "Qiimaha (ETB):", lblItemImage: "Sawirka Alaabta:", lblItemDesc: "Fahfaahinta Alaabta:", btnUpload: "Daabac Alaabta",
+                sectionClothesTitle: "Dharka Haweenka", sectionClothesDesc: "Dharka casriga ah iyo kuwa hiddaha iyo dhaqanka ee haweenka",
+                sectionCurtainsTitle: "Daahyooyinka Guriga", sectionCurtainsDesc: "Daahyo tayo sare leh oo gurigaaga ka dhiga mid aad u qurux badan",
+                lblPrice: "Qiimaha", lblPriceMeter: "Qiimaha (Mitirkiiba)", btnOrder: "Dalbo Hadda",
+                calcTitle: "Xisaabiyaha Qiimaha iyo Dalabka", calcSubtitle: "Dooro alaabta aad rabto iyo tiradeeda si aad u ogaato qiimaha guud.",
+                lblItemSelect: "Dooro Nooca Alaabta:", lblQty: "Tirada / Mitirka:", lblTotalPrice: "Qiimaha Guud:", btnCalc: "Xisaabi Qiimaha",
+                contactTitle: "Nala Soo Xiriir", contactSubtitle: "Haddii aad qabto wax interrogations ah ama aad rabto inaad amarto nala soo xiriir!",
+                contactPhoneLbl: "Nambarka Telefoonka", contactPhoneHint: "Waxaan diyaar u nahay 24/7", contactMsgLbl: "Farriin Beeg ah", contactMsgHint: "Noogu soo dir farriin WhatsApp",
+                footerText: "© 2026 QUEEN BELLA COLLECTION FASHION. Xuquuqda oo dhan waa dhowran tahay. Tel: 0911453645 / 0920689815"
+            },
+            am: {
+                navClothes: "የሴቶች አልባሳት", navCurtains: "የቤት መጋረጃዎች", navContact: "ያግኙን",
+                lblViewStore: "የደንበኞች ገፅ", lblViewAdmin: "Admin Panel", lblBackStore: "ወደ ደንበኞች ገፅ ተመለስ",
+                heroTitle: "QUEEN BELLA COLLECTION FASHION", heroSubtitle: "ለሴቶች የሚሆኑ ውብ አልባሳትን እና ለቤትዎ ተስማሚ መጋረጃዎችን በተመጣጣኝ ዋጋ ይግዙ።",
+                heroBtn1: "አልባሳትን ይመልከቱ", heroBtn2: "መጋረጃዎችን ይመልከቱ",
+                adminTitle: "QUEEN BELLA - Admin Dashboard", lblAddNewHeader: "አዲስ እቃ ለመመዝገብ", lblManageHeader: "የተመዘገቡ እቃዎች ዝርዝር",
+                lblItemName: "የእቃው ስም:", lblItemCategory: "የእቃው አይነት:", optCatClothes: "የሴቶች አልባሳት", optCatCurtains: "የቤት መጋረጃ",
+                lblItemPrice: "ዋጋ (ETB):", lblItemImage: "የእቃው ፎቶ (Upload):", lblItemDesc: "መግለጫ (Description):", btnUpload: "እቃውን ለጥፍ",
+                sectionClothesTitle: "የሴቶች አልባሳት", sectionClothesDesc: "ለሴቶች የተዘጋጁ ዘመናዊ እና ባህላዊ አልባሳት",
+                sectionCurtainsTitle: "የቤት መጋረጃዎች", sectionCurtainsDesc: "ለቤትዎ ልዩ ውበት የሚሰጡ ከፍተኛ ጥራት ያላቸው መጋረጃዎች",
+                lblPrice: "ዋጋ", lblPriceMeter: "ዋጋ (በሜትር)", btnOrder: "ለማዘዝ",
+                calcTitle: "የዋጋ እና ትዕዛዝ ማሰቢያ", calcSubtitle: "የሚፈልጉትን እቃ እና ብዛት በመምረጥ አጠቃላይ ዋጋውን ያሰሉ::",
+                lblItemSelect: "የእቃውን አይነት ይምረጡ:", lblQty: "ብዛት / ሜትር:", lblTotalPrice: "አጠቃላይ ዋጋ:", btnCalc: "ዋጋ አሰላ",
+                contactTitle: "እኛን ለማግኘት", contactSubtitle: "ማንኛውም ጥያቄ ካለዎት ወይም ማዘዝ ከፈለጉ አሁኑኑ ይደውሉልን!",
+                contactPhoneLbl: "ስልክ ቁጥር", contactPhoneHint: "በ24/7 ለእርስዎ ዝግጁ ነን", contactMsgLbl: "ቀጥታ መልእክት ለመላክ", contactMsgHint: "በ ዌትስአፕ (WhatsApp) ያናግሩን",
+                footerText: "© 2026 QUEEN BELLA COLLECTION FASHION። መብቱ በህግ የተጠበቀ ነው። ስልክ: 0911453645 / 0920689815"
+            }
+        };
+
+        async function fetchProducts() {
+            try {
+                const res = await fetch('/api/products');
+                productsList = await res.json();
+                renderStorefront();
+            } catch (err) {
+                console.error("Failed to load products from API:", err);
+            }
+        }
+
+        function switchView(view) {
+            const customerContainer = document.getElementById('customer-view-container');
+            const adminContainer = document.getElementById('admin-view-container');
+            const btnStore = document.getElementById('tab-storefront-btn');
+            const btnAdmin = document.getElementById('tab-admin-btn');
+
+            if (view === 'admin') {
+                customerContainer.classList.add('hidden');
+                adminContainer.classList.remove('hidden');
+                btnAdmin.className = "px-2.5 py-1.5 rounded-lg bg-pink-600 text-white shadow-sm transition";
+                btnStore.className = "px-2.5 py-1.5 rounded-lg text-slate-600 hover:text-pink-600 transition";
+
+                if (isAdminLoggedIn) {
+                    document.getElementById('admin-login-card').classList.add('hidden');
+                    document.getElementById('admin-dashboard-content').classList.remove('hidden');
+                } else {
+                    document.getElementById('admin-login-card').classList.remove('hidden');
+                    document.getElementById('admin-dashboard-content').classList.add('hidden');
+                }
+            } else {
+                adminContainer.classList.add('hidden');
+                customerContainer.classList.remove('hidden');
+                btnStore.className = "px-2.5 py-1.5 rounded-lg bg-pink-600 text-white shadow-sm transition";
+                btnAdmin.className = "px-2.5 py-1.5 rounded-lg text-slate-600 hover:text-pink-600 transition";
+            }
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const u = document.getElementById('adminUser').value.trim();
+            const p = document.getElementById('adminPass').value.trim();
+            if (u === 'admin' && p === 'bella123') {
+                isAdminLoggedIn = true;
+                document.getElementById('login-error-msg').classList.add('hidden');
+                document.getElementById('admin-login-card').classList.add('hidden');
+                document.getElementById('admin-dashboard-content').classList.remove('hidden');
+            } else {
+                document.getElementById('login-error-msg').classList.remove('hidden');
+            }
+        }
+
+        function handleAdminLogout() {
+            isAdminLoggedIn = false;
+            document.getElementById('adminUser').value = '';
+            document.getElementById('adminPass').value = '';
+            switchView('storefront');
+        }
+
+        function renderStorefront() {
+            const clothesGrid = document.getElementById('clothes-grid');
+            const curtainsGrid = document.getElementById('curtains-grid');
+            const calcSelect = document.getElementById('calcItem');
+            const adminList = document.getElementById('admin-products-list');
+            const currentLang = document.getElementById('langSelect').value;
+            const t = translations[currentLang];
+
+            clothesGrid.innerHTML = '';
+            curtainsGrid.innerHTML = '';
+            calcSelect.innerHTML = '';
+            adminList.innerHTML = '';
+
+            productsList.forEach(item => {
+                const isMeter = item.category === 'curtains';
+                const priceLabelText = isMeter ? t.lblPriceMeter : t.lblPrice;
+
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition flex flex-col";
+                card.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="h-64 w-full object-cover">
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="font-bold text-lg text-slate-800">${item.name}</h3>
+                        <p class="text-slate-500 text-xs my-2 flex-grow">${item.description || ''}</p>
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-slate-400 block">${priceLabelText}</span>
+                                <span class="text-xl font-extrabold text-pink-600">${Number(item.price).toLocaleString()} ETB</span>
+                            </div>
+                            <a href="tel:0911453645" class="bg-pink-50 text-pink-600 hover:bg-pink-600 hover:text-white px-4 py-2 rounded-lg font-medium text-sm transition flex items-center gap-2">
+                                <i class="fa-solid fa-cart-shopping"></i> <span>${t.btnOrder}</span>
+                            </a>
+                        </div>
+                    </div>
+                `;
+
+                if (item.category === 'clothes') {
+                    clothesGrid.appendChild(card);
+                } else {
+                    curtainsGrid.appendChild(card);
+                }
+
+                const opt = document.createElement('option');
+                opt.value = item.price;
+                opt.innerText = `${item.name} - ${Number(item.price).toLocaleString()} ETB`;
+                calcSelect.appendChild(opt);
+
+                const adminItem = document.createElement('div');
+                adminItem.className = "bg-slate-900 border border-slate-700 p-3 rounded-xl flex items-center justify-between gap-3";
+                adminItem.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <img src="${item.image}" class="w-12 h-12 rounded-lg object-cover">
+                        <div>
+                            <h4 class="font-bold text-sm text-white">${item.name}</h4>
+                            <span class="text-xs text-pink-400">${Number(item.price).toLocaleString()} ETB</span>
+                            <span class="text-[10px] text-slate-400 bg-slate-800 px-2 py-0.5 rounded ml-2 uppercase">${item.category}</span>
+                        </div>
+                    </div>
+                    <button onclick="deleteProduct(${item.id})" class="bg-red-500/20 text-red-400 hover:bg-red-500 hover:text-white p-2 rounded-lg text-xs transition">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                `;
+                adminList.appendChild(adminItem);
+            });
+
+            document.getElementById('admin-item-count').innerText = `${productsList.length} items`;
+            calculateTotal();
+        }
+
+        async function handleProductUpload(e) {
+            e.preventDefault();
+            const name = document.getElementById('prodName').value;
+            const category = document.getElementById('prodCategory').value;
+            const price = parseFloat(document.getElementById('prodPrice').value);
+            const desc = document.getElementById('prodDesc').value;
+            const fileInput = document.getElementById('prodImage');
+
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = async function(event) {
+                    const payload = { name, category, price, desc, image: event.target.result };
+                    try {
+                        const response = await fetch('/api/products', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                        if (response.ok) {
+                            document.getElementById('addProductForm').reset();
+                            await fetchProducts();
+                        }
+                    } catch (err) {
+                        console.error("Error saving product to Postgres:", err);
+                    }
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+
+        async function deleteProduct(id) {
+            try {
+                const response = await fetch(`/api/products/${id}`, { method: 'DELETE' });
+                if (response.ok) {
+                    await fetchProducts();
+                }
+            } catch (err) {
+                console.error("Failed to delete product:", err);
+            }
+        }
+
+        function calculateTotal() {
+            const calcSelect = document.getElementById('calcItem');
+            if (!calcSelect || !calcSelect.value) return;
+            const price = parseFloat(calcSelect.value);
+            const qty = parseInt(document.getElementById('calcQty').value) || 1;
+            const total = price * qty;
+            document.getElementById('totalPriceResult').innerText = total.toLocaleString() + " ETB";
+        }
+
+        function changeLanguage(lang) {
+            const t = translations[lang];
+            document.getElementById('nav-clothes').innerText = t.navClothes;
+            document.getElementById('nav-curtains').innerText = t.navCurtains;
+            document.getElementById('nav-contact').innerText = t.navContact;
+            document.getElementById('lbl-view-store').innerText = t.lblViewStore;
+            document.getElementById('lbl-view-admin').innerText = t.lblViewAdmin;
+            document.getElementById('lbl-back-store').innerText = t.lblBackStore;
+            document.getElementById('hero-title').innerText = t.heroTitle;
+            document.getElementById('hero-subtitle').innerText = t.heroSubtitle;
+            document.getElementById('hero-btn1').innerText = t.heroBtn1;
+            document.getElementById('hero-btn2').innerText = t.heroBtn2;
+            document.getElementById('admin-title').innerText = t.adminTitle;
+            document.getElementById('lbl-add-new-header').innerText = t.lblAddNewHeader;
+            document.getElementById('lbl-manage-header').innerText = t.lblManageHeader;
+            document.getElementById('lbl-item-name').innerText = t.lblItemName;
+            document.getElementById('lbl-item-category').innerText = t.lblItemCategory;
+            document.getElementById('opt-cat-clothes').innerText = t.optCatClothes;
+            document.getElementById('opt-cat-curtains').innerText = t.optCatCurtains;
+            document.getElementById('lbl-item-price').innerText = t.lblItemPrice;
+            document.getElementById('lbl-item-image').innerText = t.lblItemImage;
+            document.getElementById('lbl-item-desc').innerText = t.lblItemDesc;
+            document.getElementById('btn-upload').innerText = t.btnUpload;
+            document.getElementById('section-clothes-title').innerText = t.sectionClothesTitle;
+            document.getElementById('section-clothes-desc').innerText = t.sectionClothesDesc;
+            document.getElementById('section-curtains-title').innerText = t.sectionCurtainsTitle;
+            document.getElementById('section-curtains-desc').innerText = t.sectionCurtainsDesc;
+            document.getElementById('calc-title').innerText = t.calcTitle;
+            document.getElementById('calc-subtitle').innerText = t.calcSubtitle;
+            document.getElementById('lbl-item-select').innerText = t.lblItemSelect;
+            document.getElementById('lbl-qty').innerText = t.lblQty;
+            document.getElementById('lbl-total-price').innerText = t.lblTotalPrice;
+            document.getElementById('btn-calc').innerText = t.btnCalc;
+            document.getElementById('contact-title').innerText = t.contactTitle;
+            document.getElementById('contact-subtitle').innerText = t.contactSubtitle;
+            document.getElementById('contact-phone-lbl').innerText = t.contactPhoneLbl;
+            document.getElementById('contact-phone-hint').innerText = t.contactPhoneHint;
+            document.getElementById('contact-msg-lbl').innerText = t.contactMsgLbl;
+            document.getElementById('contact-msg-hint').innerText = t.contactMsgHint;
+            document.getElementById('footer-text').innerText = t.footerText;
+
+            renderStorefront();
+        }
+
+        window.onload = function() {
+            fetchProducts();
+        };
+    </script>
+</body>
+</html>
